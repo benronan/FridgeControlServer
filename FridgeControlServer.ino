@@ -13,7 +13,6 @@ String ApPSK = "esp_fridge_pw"; //MUST BE AT LEAST 8 CHARS
 String OTA_PASSWORD = "password";
 int NumNetworks = 2;
 String Networks[][2] = {
-  {"ChampagneCasa","welcomehome"}
 };
 
 
