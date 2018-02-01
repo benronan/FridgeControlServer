@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html >
+	<head>
+	  <meta charset="UTF-8">
+	  <title>Fridge Controller Settings</title>
+	  <style type="text/css">
+		body {
+		  padding-top: 25px;
+		  padding-left: 50px;
+		}
+		form {
+		  margin-top:-20px;
+		  padding:0;
+		  padding-left: 25px;
+		}
+		form .form-section {
+		  padding: 10px;
+		  clear:both;
+		}
+		.form-section .section-header {
+		  font-size:24px;
+		  margin-bottom:10px;
+		}
+		form .form-field {
+		  margin-left:20px;
+		  display:block;
+		  position:relative;
+		  clear:both; 
+		}
+		.form-field label {
+		  font-weight:bold;
+		  min-width: 200px ;
+		  width: auto;
+		  /*display:inline-block;*/
+		  float:left;
+		}
+		.form-field .form-control {
+		  font-weight:bold;
+		  width: 80px ;
+		  float:left;
+		  left:0;
+		  text-align:left;
+		  content-align:left;
+		}
+		.form-field .form-control[type="checkbox"] {
+		  width: auto;
+		  margin:0;
+		}
+		#submit-button {
+		  margin:25px;
+		}
+	  </style>
+	</head>
+	<body>
+	  <h2>Fermentation Controller Settings</h2>
+		<form method="get" action="update_settings">
+		  <div class="form-section">
+			  <h3 class="section-header">Temperature</h3>
+			  <div class="form-field">
+				  <label>Temperature Sensor Pin</label>
+				  <input class="form-control" type="number" name="TemperatureSensorPin" min="0" max="20" value="{{TemperatureSensorPin}}"/>
+			  </div>
+			  <div class="form-field">
+				<label>Min Temperature</label>
+				<input class="form-control" type="number" name="MinTemperature" min="32" max="100" value="{{MinTemperature}}" />
+			  </div>
+			  <div class="form-field">
+				<label>Max Temperature</label>
+				<input class="form-control" type="number" name="MaxTemperature" min="32" max="100" value="{{MaxTemperature}}" />
+			  </div>
+		  </div>
+		  
+		  <div class="form-section">
+			  <h3 class="section-header">Relay</h3>
+			  <div class="form-field">
+				<label>Pin</label>
+				<input class="form-control" type="number" name="RelayPin" min="0" max="20" value="0" />
+			  </div>
+		  </div>
+			  
+		  <div class="form-section">
+			  <h3 class="section-header">Misc</h3>
+			  <div class="form-field">
+				<label>Check Interval (seconds)</label>
+				<input class="form-control" type="number" name="CheckInterval" min="1" value="300" />
+			  </div>
+			  <div class="form-field">
+				<label>Intranet Only</label>
+				<input class="form-control" type="checkbox" name="IntranetOnly" />
+			  </div>
+		  </div>
+		  
+		  <div class="form-section">
+			<a href="/">Cancel</a>
+			<button id="submit-button" type="submit">Save</button>
+		  </div>
+		</form>
+	</body>
+</html>
